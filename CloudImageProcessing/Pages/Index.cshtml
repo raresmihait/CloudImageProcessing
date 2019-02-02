@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <div class="text-center">
+        <h1 class="display-4">Upload an image and apply effects</h1>
+    </div>
+
+    <div class="text-left">
+        <input id="uploadFile" type='file' accept='image/*' onchange='openFile(event)'><br>
+        <button style="margin-top: 10px;" type="button" onclick="applyEffectA()">Grayscale Effect</button>
+        <button style="margin-top: 10px;" type="button" onclick="applyEffectB()">Invert Effect</button>
+        <button style="margin-top: 10px;" type="button" onclick="applyEffectC()">Contrast Effect</button>
+
+        <table style="width:100%">
+            <tr>
+                <th>Input</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>
+                    <img id="inputImg" style="width: 400px; height: 400px;">
+                </td>
+                <td>
+                    <img id="outputImg" style="width: 400px; height: 400px;">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

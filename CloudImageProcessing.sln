@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudImageProcessing", "CloudImageProcessing\CloudImageProcessing.csproj", "{7B5DD4BD-2CBC-4C5B-B939-FE58002B8CD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B5DD4BD-2CBC-4C5B-B939-FE58002B8CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5DD4BD-2CBC-4C5B-B939-FE58002B8CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5DD4BD-2CBC-4C5B-B939-FE58002B8CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5DD4BD-2CBC-4C5B-B939-FE58002B8CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EB4EAF2-6804-4892-87C4-E6C618E59012}
+	EndGlobalSection
+EndGlobal
