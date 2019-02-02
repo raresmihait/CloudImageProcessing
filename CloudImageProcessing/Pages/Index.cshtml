@@ -4,6 +4,39 @@
     ViewData["Title"] = "Home page";
 }
 
+<style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @@-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
 <div>
     <div class="text-center">
         <h1 class="display-4">Upload an image and apply effects</h1>
@@ -11,9 +44,9 @@
 
     <div class="text-left">
         <input id="uploadFile" type='file' accept='image/*' onchange='openFile(event)'><br>
-        <button style="margin-top: 10px;" type="button" onclick="applyEffectA()">Grayscale Effect</button>
-        <button style="margin-top: 10px;" type="button" onclick="applyEffectB()">Invert Effect</button>
-        <button style="margin-top: 10px;" type="button" onclick="applyEffectC()">Contrast Effect</button>
+        <button id="btnEffectA" style="margin-top: 10px;" type="button" onclick="applyEffectA()" disabled>Grayscale Effect</button>
+        <button id="btnEffectB" style="margin-top: 10px;" type="button" onclick="applyEffectB()" disabled>Invert Effect</button>
+        <button id="btnEffectC" style="margin-top: 10px;" type="button" onclick="applyEffectC()" disabled>Contrast Effect</button>
 
         <table style="width:100%">
             <tr>
@@ -26,6 +59,7 @@
                 </td>
                 <td>
                     <img id="outputImg" style="width: 400px; height: 400px;">
+                    <div id="spinner" class="loader" style="width: 400px; height: 400px; display: none;"></div>
                 </td>
             </tr>
         </table>

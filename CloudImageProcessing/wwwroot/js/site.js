@@ -12,7 +12,13 @@ var openFile = function (event) {
         node.src = url;
         node.text = input.files[0];
     };
-    urlReader.readAsDataURL(input.files[0]);
+
+    if (input.files.length > 0) {
+        toggleButtonDisable(false);
+        urlReader.readAsDataURL(input.files[0]);
+    } else {
+        toggleButtonDisable(true);
+    }
 };
 
 var applyEffectA = function () {
@@ -28,6 +34,9 @@ var applyEffectC = function () {
 };
 
 var applyEffect = function (effectCode) {
+
+    toggleLoadingDisplay(true);
+
     var effectUrl = "ApplyGrayscale";
 
     if (effectCode === 1) {
@@ -51,9 +60,30 @@ var applyEffect = function (effectCode) {
         contentType: false,  // tell jQuery not to set contentType
         success: function (response) {//make sure the server sends only the required data
             document.getElementById("outputImg").src = "data:image/png;base64," + response;
+
+            toggleLoadingDisplay(false);
         },
         error: function (response) {//make sure the server sends only the required data
-            console.log(response);
+            toggleLoadingDisplay(false);
         }
     });
+};
+
+var toggleLoadingDisplay = function (active) {
+    if (active === true) {
+        $("#outputImg").hide();
+        $("#spinner").show();
+    } else {
+        $("#outputImg").show();
+        $("#spinner").hide();
+    }
+
+    $("#uploadFile").attr("disabled", active);
+    toggleButtonDisable(active);
+};
+
+var toggleButtonDisable = function (active) {
+    $("#btnEffectA").attr("disabled", active);
+    $("#btnEffectB").attr("disabled", active);
+    $("#btnEffectC").attr("disabled", active);
 };
