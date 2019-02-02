@@ -42,26 +42,31 @@
         <h1 class="display-4">Upload an image and apply effects</h1>
     </div>
 
-    <div class="text-left">
+    <div class="text-left top-buffer">
         <input id="uploadFile" type='file' accept='image/*' onchange='openFile(event)'><br>
-        <button id="btnEffectA" style="margin-top: 10px;" type="button" onclick="applyEffectA()" disabled>Grayscale Effect</button>
-        <button id="btnEffectB" style="margin-top: 10px;" type="button" onclick="applyEffectB()" disabled>Invert Effect</button>
-        <button id="btnEffectC" style="margin-top: 10px;" type="button" onclick="applyEffectC()" disabled>Contrast Effect</button>
 
-        <table style="width:100%">
-            <tr>
-                <th>Input</th>
-                <th>Output</th>
-            </tr>
-            <tr>
-                <td>
-                    <img id="inputImg" style="width: 400px; height: 400px;">
-                </td>
-                <td>
-                    <img id="outputImg" style="width: 400px; height: 400px;">
-                    <div id="spinner" class="loader" style="width: 400px; height: 400px; display: none;"></div>
-                </td>
-            </tr>
-        </table>
+        <div class="row top-buffer">
+            <div class="col-4">
+                <button id="btnEffectA" class="effect-button" type="button" onclick="applyEffectA()" disabled>Grayscale Effect</button>
+            </div>
+            <div class="col-4">
+                <button id="btnEffectB" class="effect-button" type="button" onclick="applyEffectB()" disabled>Invert Effect</button>
+            </div>
+            <div class="col-4">
+                <button id="btnEffectC" class="effect-button" type="button" onclick="applyEffectC()" disabled>Contrast Effect</button>
+            </div>
+        </div>
+
+        <div class="row top-buffer">
+            <div class="col-sm-6">
+                <h3>Input</h3>
+                <img id="inputImg" class="img-fluid">
+            </div>
+            <div class="col-sm-6">
+                <h3>Output</h3>
+                <img id="outputImg" class="img-fluid">
+                <div id="spinner" class="loader" style="max-width: 400px; max-height: 400px; display: none;"></div>
+            </div>
+        </div>
     </div>
 </div>
